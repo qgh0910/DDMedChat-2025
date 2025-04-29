@@ -53,14 +53,7 @@ After the data preparation is completed, run the following commands in the direc
 ```bash
 python main.py -c path_to_config_file
 ```
-
-## 4. Performance Evaluation
-Use dragin_evaluation.py to evaluate the model's performance. Ensure that the correct dataset path and the ElasticSearch index name created by main.py are specified.
-```bash
-python dragin_evaluation.py --beir_corpus_path "./data/test_data" --index_name "model_index"
-```
-
-## 5 Fine-tuning
+## 4 Fine-tuning
 This project utilizes LLaMA-Factory (https://github.com/hiyouga/LLaMA-Factory) for model fine-tuning.
 ### step1： Install
 ```bash
@@ -71,6 +64,13 @@ pip install -e ".[torch,metrics]"
 ### step2： Data Preparation
 Refer to sft/data/README_zh.md to prepare fine-tuning data. When using a custom dataset, please update the sft/data/dataset_info.json file.
 ### step3：Fine-tuning and Evaluation (with Visual UI)
+## 5. Performance Evaluation
+Use dragin_evaluation.py to evaluate the model's performance. Ensure that the correct dataset path and the ElasticSearch index name created by main.py are specified.
+```bash
+python dragin_evaluation.py --beir_corpus_path "./data/test_data" --index_name "model_index"
+```
+
+
 ```bash
 llamafactory-cli webui
 ```
