@@ -78,40 +78,66 @@ Use dragin_evaluation.py to evaluate the model's performance. Ensure that the co
 python dragin_evaluation.py --beir_corpus_path "./data/test_data" --index_name "model_index"
 ```
 ### Performance of Medical Large Language Models Fine-tuned with DoRA and RAG Models Based on DRAGIN on the Medical Dialogue Dataset
-| Dataset           | Model                   | BLEU-4  | ROUGE-1  | ROUGE-L  |
-|-------------------|--------------------------|--------:|---------:|---------:|
-| Gastroenterology  | Qwen2-7b+ DRAGIN         | 18.8793 | 39.7877  | 40.3125  |
-|                   | ChatGLM3-6b + DRAGIN     | 19.4113 | 40.0444  | 41.0543  |
-|                   | Qwen2-7b+w/o RAG         | 9.2875  | 11.3856  | 18.7722  |
-|                   | ChatGLM3-6b+w/o RAG      | 9.2856  | 11.5577  | 18.8668  |
-|                   | ChatGLM3-6b**            | 12.1644 | 25.3406  | 26.6342  |
-|                   | DDMedChat*               | 19.5617 | 39.6500  | 40.0214  |
-|                   | DDMedChat**              | 19.8200 | 40.5072  | 40.4590  |
-|                   | DDMedChat***             | 19.6525 | 40.9240  | 40.7358  |
-| Internal Medicine | Qwen2-7b+ DRAGIN         | 17.8208 | 37.4655  | 38.2362  |
-|                   | ChatGLM3-6b + DRAGIN     | 18.5057 | 38.1342  | 39.6373  |
-|                   | Qwen2-7b+w/o RAG         | 9.2705  | 10.3908  | 19.9836  |
-|                   | ChatGLM3-6b+w/o RAG      | 9.2378  | 11.3518  | 19.0349  |
-|                   | ChatGLM3-6b**            | 12.2313 | 25.5939  | 26.7940  |
-|                   | DDMedChat*               | 18.5593 | 37.6984  | 40.3105  |
-|                   | DDMedChat**              | 18.6449 | 38.5966  | 39.8941  |
-|                   | DDMedChat***             | 18.9236 | 39.4453  | 39.6580  |
-| Otolaryngology    | Qwen2-7b+ DRAGIN         | 18.0640 | 38.4677  | 38.3220  |
-|                   | ChatGLM3-6b + DRAGIN     | 18.5175 | 37.8565  | 38.5139  |
-|                   | Qwen2-7b+w/o RAG         | 9.4987  | 9.7956   | 17.4727  |
-|                   | ChatGLM3-6b+w/o RAG      | 9.0396  | 10.8386  | 18.5301  |
-|                   | ChatGLM3-6b**            | 12.1089 | 25.3123  | 26.4456  |
-|                   | DDMedChat*               | 19.3825 | 40.1850  | 41.0837  |
-|                   | DDMedChat**              | 19.1443 | 41.3782  | 42.9685  |
-|                   | DDMedChat***             | 19.3573 | 41.1621  | 41.7628  |
-| Pediatrics        | Qwen2-7b+ DRAGIN         | 20.8368 | 42.2496  | 42.1096  |
-|                   | ChatGLM3-6b + DRAGIN     | 20.0915 | 40.9212  | 41.5272  |
-|                   | Qwen2-7b+w/o RAG         | 10.0548 | 13.1980  | 17.8556  |
-|                   | ChatGLM3-6b+w/o RAG      | 9.7076  | 12.0465  | 19.7235  |
-|                   | ChatGLM3-6b**            | 12.3510 | 25.5654  | 26.9745  |
-|                   | DDMedChat*               | 19.5821 | 42.5326  | 43.3001  |
-|                   | DDMedChat**              | 19.8082 | 42.5738  | 45.1504  |
-|                   | DDMedChat***             | 19.7138 | 43.2985  | 44.0215  |
+<table>
+  <thead>
+    <tr>
+      <th>Dataset</th>
+      <th>Model</th>
+      <th>BLEU-4</th>
+      <th>ROUGE-1</th>
+      <th>ROUGE-L</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="8">Gastroenterology</td>
+      <td>Qwen2-7b+ DRAGIN</td><td>18.8793</td><td>39.7877</td><td>40.3125</td>
+    </tr>
+    <tr><td>ChatGLM3-6b + DRAGIN</td><td>19.4113</td><td>40.0444</td><td>41.0543</td></tr>
+    <tr><td>Qwen2-7b+w/o RAG</td><td>9.2875</td><td>11.3856</td><td>18.7722</td></tr>
+    <tr><td>ChatGLM3-6b+w/o RAG</td><td>9.2856</td><td>11.5577</td><td>18.8668</td></tr>
+    <tr><td>ChatGLM3-6b**</td><td>12.1644</td><td>25.34055</td><td>26.6342</td></tr>
+    <tr><td>DDMedChat*</td><td>19.5617</td><td>39.6500</td><td>40.0214</td></tr>
+    <tr><td>DDMedChat**</td><td>19.8200</td><td>40.5072</td><td>40.4590</td></tr>
+    <tr><td>DDMedChat***</td><td>19.6525</td><td>40.9240</td><td>40.7358</td></tr>
+
+    <tr>
+      <td rowspan="8">Internal Medicine</td>
+      <td>Qwen2-7b+ DRAGIN</td><td>17.8208</td><td>37.4655</td><td>38.2362</td>
+    </tr>
+    <tr><td>ChatGLM3-6b + DRAGIN</td><td>18.5057</td><td>38.1342</td><td>39.6373</td></tr>
+    <tr><td>Qwen2-7b+w/o RAG</td><td>9.2705</td><td>10.3908</td><td>19.9836</td></tr>
+    <tr><td>ChatGLM3-6b+w/o RAG</td><td>9.2378</td><td>11.3518</td><td>19.0349</td></tr>
+    <tr><td>ChatGLM3-6b**</td><td>12.2313</td><td>25.5939</td><td>26.7940</td></tr>
+    <tr><td>DDMedChat*</td><td>18.5593</td><td>37.6984</td><td>40.3105</td></tr>
+    <tr><td>DDMedChat**</td><td>18.6449</td><td>38.5966</td><td>39.8941</td></tr>
+    <tr><td>DDMedChat***</td><td>18.9236</td><td>39.4453</td><td>39.6580</td></tr>
+
+    <tr>
+      <td rowspan="8">Otolaryngology</td>
+      <td>Qwen2-7b+ DRAGIN</td><td>18.0640</td><td>38.4677</td><td>38.3220</td>
+    </tr>
+    <tr><td>ChatGLM3-6b + DRAGIN</td><td>18.5175</td><td>37.8565</td><td>38.5139</td></tr>
+    <tr><td>Qwen2-7b+w/o RAG</td><td>9.4987</td><td>9.7956</td><td>17.4727</td></tr>
+    <tr><td>ChatGLM3-6b+w/o RAG</td><td>9.0396</td><td>10.8386</td><td>18.5301</td></tr>
+    <tr><td>ChatGLM3-6b**</td><td>12.1089</td><td>25.3123</td><td>26.4456</td></tr>
+    <tr><td>DDMedChat*</td><td>19.3825</td><td>40.1850</td><td>41.0837</td></tr>
+    <tr><td>DDMedChat**</td><td>19.1443</td><td>41.3782</td><td>42.9685</td></tr>
+    <tr><td>DDMedChat***</td><td>19.3573</td><td>41.1621</td><td>41.7628</td></tr>
+
+    <tr>
+      <td rowspan="8">Pediatrics</td>
+      <td>Qwen2-7b+ DRAGIN</td><td>20.8368</td><td>42.2496</td><td>42.1096</td>
+    </tr>
+    <tr><td>ChatGLM3-6b + DRAGIN</td><td>20.0915</td><td>40.9212</td><td>41.5272</td></tr>
+    <tr><td>Qwen2-7b+w/o RAG</td><td>10.0548</td><td>13.1980</td><td>17.8556</td></tr>
+    <tr><td>ChatGLM3-6b+w/o RAG</td><td>9.7076</td><td>12.0465</td><td>19.7235</td></tr>
+    <tr><td>ChatGLM3-6b**</td><td>12.3510</td><td>25.5654</td><td>26.9745</td></tr>
+    <tr><td>DDMedChat*</td><td>19.5821</td><td>42.5326</td><td>43.3001</td></tr>
+    <tr><td>DDMedChat**</td><td>19.8082</td><td>42.5738</td><td>45.1504</td></tr>
+    <tr><td>DDMedChat***</td><td>19.7138</td><td>43.2985</td><td>44.0215</td></tr>
+  </tbody>
+</table>
 
 ```bash
 llamafactory-cli webui
