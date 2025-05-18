@@ -72,6 +72,9 @@ pip install -e ".[torch,metrics]"
 ### step2： Data Preparation
 Refer to sft/data/README_zh.md to prepare fine-tuning data. When using a custom dataset, please update the sft/data/dataset_info.json file.
 ### step3：Fine-tuning and Evaluation (with Visual UI)
+```bash
+llamafactory-cli webui
+```
 ## 5. Performance Evaluation
 Use dragin_evaluation.py to evaluate the model's performance. Ensure that the correct dataset path and the ElasticSearch index name created by main.py are specified.
 ```bash
