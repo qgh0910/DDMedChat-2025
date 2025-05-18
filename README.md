@@ -24,6 +24,14 @@ Run the following commands for data preprocessing to ensure that the data can be
 ```bash
 python ./data/preprocess_data.py --input_path "./data/raw_data" --output_path "./data/processed_data"
 ```
+### Dataset Types and Quantity Analysis
+| Dataset       | Data Type              | Data Quantity   |
+|---------------|------------------------|-----------------|
+| Kuake-IR      | Medical Text Records   | 127,500         |
+| Huatuo-26M    | Medical Dialogue Pairs | 26,000,000      |
+| Huatuo-Lite   | Medical Dialogue Pairs | 180,000         |
+| MedDialog-CN  | Medical Dialogue Pairs | 34,000,000      |
+
 ## 2. Config
 ```
 {
